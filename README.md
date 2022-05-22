@@ -16,6 +16,10 @@ sidekiq
 
 You do not need to restart the process when you make changes in jobs. Restart is
 needed when you make change in sidekiq.yml configuration.
+You can start both rails and sidekiq in one command using Procfile
+```
+foreman start
+```
 
 Let's create plain sidekiq job
 ```
@@ -136,6 +140,7 @@ require 'sidekiq-scheduler'
 
 class HelloWorld
   include Sidekiq::Worker
+  sidekiq_options queue: 'my_app_default'
 
   def perform
     puts 'Hello world'
@@ -149,7 +154,7 @@ add to configuration
 
 :schedule:
   hello_world:
-    cron: '0 * * * * *'   # Runs once per minute
+    cron: '0 * * * * *'   # https://crontab.guru/
     class: HelloWorld
 ```
 

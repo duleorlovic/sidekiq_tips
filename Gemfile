@@ -74,3 +74,5 @@ end
 gem "sidekiq", "~> 6.4"
 
 gem "sidekiq-scheduler", "~> 4.0"
+
+gem "foreman", "~> 0.87.2"

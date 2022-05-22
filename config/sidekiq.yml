@@ -3,3 +3,11 @@
 :queues:
   - my_app_critical
   - my_app_default
+:schedule:
+  hello_world:
+    # https://github.com/moove-it/sidekiq-scheduler#schedule-types
+    # every: "1m"
+    # check timezone name with ActiveSupport::TimeZone.find_tzinfo(Rails.configuration.time_zone).name
+    # cron: '5 10 * * MON'   # https://crontab.guru/#5_10_*_*_MON
+    cron: '0 * * * * *'   # https://crontab.guru/
+    class: HelloWorld
