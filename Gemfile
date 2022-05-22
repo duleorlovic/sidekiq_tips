@@ -72,3 +72,5 @@ group :test do
 end
 
 gem "sidekiq", "~> 6.4"
+
+gem "sidekiq-scheduler", "~> 4.0"

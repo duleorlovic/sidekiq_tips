@@ -1,0 +1,5 @@
+---
+:concurrency: 2
+:queues:
+  - my_app_critical
+  - my_app_default
